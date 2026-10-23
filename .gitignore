@@ -1,0 +1,98 @@
+# ==========================================
+# SEGREDOS E VARIÁVEIS DE AMBIENTE
+# ==========================================
+.env
+.env.*
+!.env.example
+
+# Configurações locais
+backend/.env
+backend/config/local.php
+
+# Chaves e certificados privados
+*.pem
+*.key
+*.p12
+*.pfx
+
+# ==========================================
+# LOGS E ARQUIVOS TEMPORÁRIOS
+# ==========================================
+*.log
+logs/
+backend/storage/logs/*
+!backend/storage/logs/.gitkeep
+
+tmp/
+temp/
+cache/
+*.tmp
+*.bak
+*.swp
+*.swo
+*~
+
+# ==========================================
+# PHP E COMPOSER
+# ==========================================
+vendor/
+composer.phar
+
+# PHPUnit
+.phpunit.cache/
+.phpunit.result.cache
+
+# ==========================================
+# FRONTEND E FERRAMENTAS
+# ==========================================
+node_modules/
+dist/
+build/
+coverage/
+.npm/
+.eslintcache
+
+# ==========================================
+# EDITORES E IDEs
+# ==========================================
+.vscode/
+.idea/
+*.code-workspace
+
+# ==========================================
+# SISTEMA OPERACIONAL
+# ==========================================
+.DS_Store
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# ==========================================
+# BANCO DE DADOS E BACKUPS LOCAIS
+# ==========================================
+*.sqlite
+*.sqlite3
+*.db
+*.dump
+*.bak.sql
+*.sql.zip
+
+# ==========================================
+# ARQUIVOS LOCAIS DO XAMPP
+# ==========================================
+xampp-control.log
+apache_error.log
+mysql_error.log
+
+# ==========================================
+# UPLOADS E ARQUIVOS GERADOS
+# ==========================================
+backend/storage/uploads/
+backend/storage/cache/
+
+# ==========================================
+# ARQUIVOS DE CONFIGURAÇÃO LOCAL
+# ==========================================
+.env.local
+.env.development.local
+.env.production.local

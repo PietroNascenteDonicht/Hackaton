@@ -1,0 +1,24 @@
+
+Options -Indexes
+DirectoryIndex index.php
+
+RewriteEngine On
+
+# Bloqueia acesso a arquivos sensíveis
+<FilesMatch "^(\.env|\.env\.example|\.git|composer\.(json|lock))$">
+    Require all denied
+</FilesMatch>
+
+# Bloqueia acesso direto a pastas privadas
+RewriteRule ^(app|config|database|docs|routes|storage|tests)/ - [F,L,NC]
+
+# Se o projeto estiver em uma subpasta, ajuste o RewriteBase
+RewriteBase /hackathon/
+
+# Se o arquivo ou diretório existir, não reescreve a URL
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Encaminha as demais requisições ao ponto de entrada
+RewriteRule ^ public/index.php [L,QSA]
