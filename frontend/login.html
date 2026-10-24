@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Entrar — Gestar com Cuidado</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header class="header">
+    <div class="container header__inner">
+      <a href="index.html" class="logo" aria-label="Gestar com Cuidado — página inicial">
+        <span class="logo__icone">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/><path d="M9.5 11.5c.8-.6 1.6-.6 2.5 0s1.7.6 2.5 0"/></svg>
+        </span>
+        <span class="logo__texto">
+          <span class="logo__nome">Gestar</span>
+          <span class="logo__sub">com Cuidado</span>
+        </span>
+      </a>
+      <a href="https://www.gov.br" class="link-externo" target="_blank" rel="noopener">
+        gov.br · portal externo
+        <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 9l6-6M4 3h5v5"/></svg>
+      </a>
+    </div>
+  </header>
+
+  <main class="auth auth--login">
+    <div class="container">
+      <div class="auth__centro">
+        <a href="index.html" class="voltar">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M13 8H3M7 4L3 8l4 4"/></svg>
+          Voltar à página inicial
+        </a>
+
+        <section class="card card--login" aria-labelledby="titulo-login">
+          <div class="card--login__topo">
+            <span class="logo__icone">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/><path d="M9.5 11.5c.8-.6 1.6-.6 2.5 0s1.7.6 2.5 0"/></svg>
+            </span>
+            <div class="avatar">
+              <img class="foto" src="assets/gestante.jpg" alt="" />
+            </div>
+          </div>
+
+          <h1 id="titulo-login" class="titulo">Que bom ter você de volta!</h1>
+          <p class="subtitulo">Entre na sua conta para continuar sua jornada de cuidado.</p>
+
+          <form id="form-login" class="form" novalidate>
+            <div class="aviso" role="status" hidden></div>
+
+            <div class="campo">
+              <label for="login-usuario">E-mail ou nome de usuário</label>
+              <div class="campo__entrada">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>
+                <input class="input input--campo input--icone" id="login-usuario" name="usuario" type="text" placeholder="Digite seu e-mail ou usuário" autocomplete="username" required />
+              </div>
+              <span class="erro-msg" aria-live="polite"></span>
+            </div>
+
+            <div class="campo">
+              <label for="login-senha">Senha</label>
+              <div class="campo__entrada">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+                <input class="input input--campo input--icone input--olho" id="login-senha" name="senha" type="password" placeholder="Digite sua senha" autocomplete="current-password" required />
+                <button type="button" class="btn-olho" data-alternar-senha="login-senha" aria-label="Mostrar senha">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>
+                </button>
+              </div>
+              <span class="erro-msg" aria-live="polite"></span>
+            </div>
+
+            <div class="linha-opcoes">
+              <label class="check">
+                <input type="checkbox" name="manter" />
+                Manter conectado
+              </label>
+              <a href="#" class="link-sub" id="esqueci-senha">Esqueci minha senha</a>
+            </div>
+
+            <button type="submit" class="btn btn--primario btn--bloco">Entrar</button>
+
+            <p class="rodape-form">Ainda não tem uma conta? <a href="cadastro.html">Cadastre-se</a></p>
+          </form>
+        </section>
+
+        <p class="frase">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M12 21v-9"/><path d="M12 12c0-4 3-6 7-6 0 4-3 6-7 6z"/><path d="M12 14c0-3-2.5-5-6-5 0 3 2.5 5 6 5z"/></svg>
+          Um espaço para cuidar de você.
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__simples">
+      <span>Gestar com Cuidado · Apoio à gestante e à família</span>
+      <a href="https://www.gov.br" class="link-externo" target="_blank" rel="noopener">
+        gov.br · portal externo
+        <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 9l6-6M4 3h5v5"/></svg>
+      </a>
+    </div>
+  </footer>
+
+  <script src="js/comum.js"></script>
+  <script src="js/login.js"></script>
+</body>
+</html>

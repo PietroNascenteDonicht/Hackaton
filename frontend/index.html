@@ -1,11 +1,139 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gestar com Cuidado — Apoio à gestante e à família</title>
+  <meta name="description" content="Informação, acolhimento e acompanhamento para você viver a maternidade com mais segurança e tranquilidade." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <h1>oiiiii</h1>
+
+  <header class="header">
+    <div class="container header__inner">
+      <a href="index.html" class="logo" aria-label="Gestar com Cuidado — página inicial">
+        <span class="logo__icone">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/><path d="M9.5 11.5c.8-.6 1.6-.6 2.5 0s1.7.6 2.5 0"/></svg>
+        </span>
+        <span class="logo__texto">
+          <span class="logo__nome">Gestar</span>
+          <span class="logo__sub">com Cuidado</span>
+        </span>
+      </a>
+
+      <nav class="header__nav" aria-label="Navegação principal">
+        <a href="https://www.gov.br" class="link-externo" target="_blank" rel="noopener">
+          gov.br · portal externo
+          <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 9l6-6M4 3h5v5"/></svg>
+        </a>
+        <a href="login.html" class="link-nav">Entrar</a>
+        <a href="cadastro.html" class="btn btn--primario">Criar minha conta</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero__grid">
+          <div>
+            <span class="eyebrow">Acolhimento em cada fase</span>
+            <h1>Sua gestação merece cuidado em cada etapa.</h1>
+            <p class="hero__texto">Informação, acolhimento e acompanhamento para você viver a maternidade com mais segurança e tranquilidade.</p>
+            <div class="hero__acoes">
+              <a href="cadastro.html" class="btn btn--primario">Começar agora</a>
+              <a href="login.html" class="btn btn--secundario">Já tenho uma conta</a>
+            </div>
+          </div>
+
+          <div class="hero__visual">
+            <div class="hero__foto">
+              <img class="foto" src="assets/gestante.jpg" alt="Gestante sorrindo sentada no sofá com as mãos na barriga" />
+            </div>
+            <div class="hero__selo">
+              <span class="icone-caixa">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg>
+              </span>
+              <div>
+                <strong>Um passo de cada vez.</strong>
+                <span>Você não precisa caminhar sozinha.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p class="frase">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M12 21v-9"/><path d="M12 12c0-4 3-6 7-6 0 4-3 6-7 6z"/><path d="M12 14c0-3-2.5-5-6-5 0 3 2.5 5 6 5z"/></svg>
+          Cuidar de quem gera uma vida é cuidar do futuro.
+        </p>
+      </div>
+    </section>
+
+    <section class="recursos" aria-labelledby="titulo-recursos">
+      <div class="container">
+        <h2 id="titulo-recursos">Mais apoio para a sua jornada</h2>
+        <div class="recursos__grid">
+          <article class="card-recurso">
+            <span class="icone-caixa">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h4"/></svg>
+            </span>
+            <h3>Informação confiável</h3>
+            <p>Conteúdos para acompanhar cada fase da gestação.</p>
+          </article>
+          <article class="card-recurso">
+            <span class="icone-caixa">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M8 3v4M16 3v4M4 10h16"/><path d="M12 17s-2.5-1.5-2.5-3.2a1.4 1.4 0 0 1 2.5-.9 1.4 1.4 0 0 1 2.5.9c0 1.7-2.5 3.2-2.5 3.2z"/></svg>
+            </span>
+            <h3>Acompanhamento da gestação</h3>
+            <p>Organização das informações relacionadas ao período gestacional.</p>
+          </article>
+          <article class="card-recurso">
+            <span class="icone-caixa">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="9" r="2.2"/><path d="M16 14.2c2.8.3 5 2.6 5 5.8"/></svg>
+            </span>
+            <h3>Apoio à família</h3>
+            <p>Recursos pensados para gestantes e pessoas que acompanham essa jornada.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__topo">
+        <div class="footer__marca">
+          <a href="index.html" class="logo">
+            <span class="logo__icone">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/><path d="M9.5 11.5c.8-.6 1.6-.6 2.5 0s1.7.6 2.5 0"/></svg>
+            </span>
+            <span class="logo__texto">
+              <span class="logo__nome">Gestar</span>
+              <span class="logo__sub">com Cuidado</span>
+            </span>
+          </a>
+          <p>Informação e acolhimento para cada etapa da gestação.</p>
+        </div>
+        <nav class="footer__links" aria-label="Links institucionais">
+          <a href="#">Sobre a plataforma</a>
+          <a href="#">Privacidade</a>
+          <a href="#">Acessibilidade</a>
+          <a href="#">Contato</a>
+        </nav>
+      </div>
+      <div class="footer__simples">
+        <span>Gestar com Cuidado · Apoio à gestante e à família</span>
+        <a href="https://www.gov.br" class="link-externo" target="_blank" rel="noopener">
+          gov.br · portal externo
+          <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 9l6-6M4 3h5v5"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/comum.js"></script>
 </body>
 </html>
