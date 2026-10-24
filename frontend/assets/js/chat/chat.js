@@ -4,6 +4,7 @@ import { chat_send } from "../chat/api.js";
 const text_chat = document.getElementById("question");
 const submit_button = document.getElementById("send");
 const messages = document.getElementById("messages");
+const chat_form = document.getElementById("chat-form");
 
 let historico = [];
 let enviando = false;
@@ -28,9 +29,17 @@ async function chat_prepare() {
     chat_att("usuario", texto);
 
     text_chat.value = "";
+    const indicador = chat_create_typing_indicator();
+    messages.appendChild(indicador);
+    indicador.scrollIntoView({
+        behavior: "smooth",
+        block: "end",
+    });
 
     try {
         const resposta = await chat_send(texto);
+
+        indicador.remove();
 
         // Guarda a resposta real da IA.
         historico.push({
@@ -48,6 +57,7 @@ async function chat_prepare() {
         historico.pop();
 
     } finally {
+        indicador.remove();
         enviando = false;
         submit_button.disabled = false;
         text_chat.focus();
@@ -86,6 +96,43 @@ function chat_create_message(tipo, texto) {
     return mensagem;
 }
 
+function chat_create_typing_indicator() {
+    const mensagem = document.createElement("div");
+    mensagem.classList.add("chat-message", "assistente", "typing-message");
+    mensagem.setAttribute("role", "status");
+    mensagem.setAttribute("aria-label", "Assistente está respondendo");
+
+    const avatar = document.createElement("div");
+    avatar.classList.add("message-avatar");
+    avatar.textContent = "IA";
+
+    const conteudo = document.createElement("div");
+    conteudo.classList.add("message-content");
+
+    const autor = document.createElement("span");
+    autor.classList.add("message-author");
+    autor.textContent = "Assistente";
+
+    const bolha = document.createElement("div");
+    bolha.classList.add("message-bubble", "typing-bubble");
+    bolha.setAttribute("aria-hidden", "true");
+
+    const pontos = document.createElement("span");
+    pontos.classList.add("typing-dots");
+
+    for (let i = 0; i < 3; i++) {
+        const ponto = document.createElement("span");
+        ponto.classList.add("typing-dot");
+        pontos.appendChild(ponto);
+    }
+
+    bolha.appendChild(pontos);
+    conteudo.append(autor, bolha);
+    mensagem.append(avatar, conteudo);
+
+    return mensagem;
+}
+
 // Adiciona a mensagem à section #messages.
 function chat_att(tipo, texto) {
     const mensagem = chat_create_message(tipo, texto);
@@ -99,7 +146,10 @@ function chat_att(tipo, texto) {
     });
 }
 
-submit_button.addEventListener("click", chat_prepare);
+chat_form.addEventListener("submit", (ev) => {
+    ev.preventDefault();
+    chat_prepare();
+});
 
 text_chat.addEventListener("keydown", (ev) => {
     if (ev.key === "Enter" && !ev.shiftKey) {
