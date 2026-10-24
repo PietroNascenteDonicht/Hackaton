@@ -26,9 +26,11 @@ async function chat_prepare() {
     });
 
     // Mostra a mensagem do usuário na página.
+    messages.innerHTML=''
     chat_att("usuario", texto);
 
     text_chat.value = "";
+
     const indicador = chat_create_typing_indicator();
     messages.appendChild(indicador);
     indicador.scrollIntoView({
