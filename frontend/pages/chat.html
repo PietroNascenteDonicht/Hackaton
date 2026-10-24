@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assistente IA</title>
+    <link rel="stylesheet" href="../assets/css/chat/style.css">
+    <script type="module" src="../assets/js/chat/chat.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="logo" aria-hidden="true">✳</div>
+
+        <div class="header-info">
+            <h1>Assistente IA</h1>
+            <p>Modelo local · Llama 3.2</p>
+        </div>
+
+        <span class="status">● Local</span>
+    </header>
+
+    <main>
+        <section id="messages" aria-live="polite">
+            <div class="welcome" id="welcome">
+                <div class="welcome-icon">✳</div>
+                <h2>Como posso ajudar?</h2>
+                <p>
+                    Envia uma pergunta para começar uma conversa
+                    com o assistente de inteligência artificial.
+                </p>
+            </div>
+        </section>
+
+        <form class="composer" id="chat-form">
+            <textarea
+                id="question"
+                maxlength="2000"
+                placeholder="Escreve tua pergunta..."
+                aria-label="Tua pergunta"
+                required
+            ></textarea>
+
+            <div class="composer-bottom">
+                <span class="hint">Enter para enviar · Shift + Enter para nova linha</span>
+                <button id="send" type="submit">Enviar ↑</button>
+            </div>
+        </form>
+
+        <p class="disclaimer">
+            Esse é um disclaimer
+        </p>
+    </main>
