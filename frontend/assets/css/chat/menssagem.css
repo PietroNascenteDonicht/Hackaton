@@ -1,0 +1,174 @@
+
+/* Área que contém todas as mensagens */
+#messages {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    padding: 24px;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    background: #f7f9f7;
+    scroll-behavior: smooth;
+}
+
+/* Barra de rolagem */
+#messages::-webkit-scrollbar {
+    width: 6px;
+}
+
+#messages::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+#messages::-webkit-scrollbar-thumb {
+    background: #cbd5cc;
+    border-radius: 10px;
+}
+
+/* Estrutura da mensagem */
+.chat-message {
+    display: flex;
+    align-items: flex-end;
+    gap: 10px;
+
+    width: 100%;
+    margin: 6px 0;
+
+    animation: message-appear 0.2s ease-out;
+}
+
+/* Mensagens da pessoa */
+.chat-message.usuario {
+    justify-content: flex-end;
+}
+
+/* Mensagens da IA */
+.chat-message.assistente {
+    justify-content: flex-start;
+}
+
+/* Avatar */
+.message-avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+
+    width: 34px;
+    height: 34px;
+
+    border-radius: 50%;
+    background: #e0ebe2;
+    color: #28583b;
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+}
+
+/* Área do autor e da bolha */
+.message-content {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    max-width: min(75%, 620px);
+    min-width: 0;
+}
+
+/* Nome do autor */
+.message-author {
+    color: #718075;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.chat-message.usuario .message-author {
+    text-align: right;
+    padding-right: 2px;
+}
+
+.chat-message.assistente .message-author {
+    text-align: left;
+    padding-left: 2px;
+}
+
+/* Bolha base */
+.message-bubble {
+    padding: 12px 16px;
+
+    font-size: 14px;
+    line-height: 1.65;
+
+    overflow-wrap: anywhere;
+    white-space: pre-wrap;
+
+    border-radius: 16px;
+}
+
+/* Bolha do usuário */
+.chat-message.usuario .message-bubble {
+    color: #ffffff;
+    background: #28583b;
+
+    border-bottom-right-radius: 4px;
+
+    box-shadow: 0 2px 4px rgb(24 55 35 / 8%);
+}
+
+/* Bolha da IA */
+.chat-message.assistente .message-bubble {
+    color: #26352b;
+    background: #ffffff;
+
+    border: 1px solid #e2e8e2;
+    border-bottom-left-radius: 4px;
+
+    box-shadow: 0 2px 5px rgb(30 50 35 / 4%);
+}
+
+/* Entrada suave */
+@keyframes message-appear {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Ajustes para telas menores */
+@media (max-width: 600px) {
+    #messages {
+        padding: 16px 12px;
+    }
+
+    .chat-message {
+        gap: 7px;
+    }
+
+    .message-avatar {
+        width: 30px;
+        height: 30px;
+        font-size: 10px;
+    }
+
+    .message-content {
+        max-width: 85%;
+    }
+
+    .message-bubble {
+        padding: 10px 13px;
+        font-size: 14px;
+    }
+}
