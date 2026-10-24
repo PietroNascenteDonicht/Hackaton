@@ -49,9 +49,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     enviar(form, "Entrando…", async () => {
-      // TODO: trocar pela chamada real à API de autenticação
-      await esperar(800);
-      mostrarAviso(form, "Login realizado! (simulação — conecte aqui ao back-end)");
+  await esperar(800);
+  window.location.href = "index.html";
+});
     });
   });
-});
