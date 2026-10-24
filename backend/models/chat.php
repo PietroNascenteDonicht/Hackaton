@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+include_once(__DIR__ . '/../helpers/env.php');
+
 class ChatModel
 {
     private string $endpoint;
@@ -17,8 +19,7 @@ class ChatModel
         $this->endpoint = rtrim($endpoint, '/');
         $this->timeout = $timeout;
 
-        $this->promptSistema =
-            'Responda em português brasileiro, com clareza e precisão.';
+        $this->promptSistema = Env::get('PROMPT_CHAT');
     }
 
     /**

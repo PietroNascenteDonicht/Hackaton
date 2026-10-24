@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 header('Content-Type: application/json; charset=utf-8');
 
+require_once __DIR__ . '/../config/config.php';
 require_once __DIR__ . '/../controllers/chat.php';
 
 try {
@@ -37,10 +38,9 @@ try {
 } catch (Throwable $erro) {
     http_response_code(500);
 
-    // Registra o erro técnico no log do PHP.
     error_log((string) $erro);
 
     echo json_encode([
-        'erro' => 'Não foi possível obter uma resposta da IA.'
+        'erro' => $erro->getMessage()
     ], JSON_UNESCAPED_UNICODE);
 }
